@@ -3,17 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<h1 id="page-title"></h1>
-
-<script>
-  const isPersonal = true; // O el valor que obtengas
-  
-  // Definir el título usando un ternario
-  const title = isPersonal ? "Mi Espacio Personal" : "Espacio General";
-  
-  // Asignarlo al elemento HTML
-  document.getElementById("page-title").textContent = title;
-</script>
+<title>Andrés Muñiz</title>
 <meta name="description" content="Portfolio de Andrés Muñiz, ingeniero de soporte de sistemas y middleware.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -794,11 +784,12 @@
 
 </div>
 
-<footer>© <span id="year"></span> Andrés Muñiz — TheGame497</footer>
+<footer>© <span id="year"></span> <span id="footer-name">Andrés Muñiz</span></footer>
 
 <script>
   // work / personal mode switch
   (function(){
+    var footerName = document.getElementById('footer-name');
     var modeSwitch = document.getElementById('mode-switch');
     var workDiv = document.getElementById('mode-work');
     var personalDiv = document.getElementById('mode-personal');
@@ -897,6 +888,8 @@ var personalPhotoSrc = 'path/to/your/personal/photo.jpg'; // Replace with your p
         applyHeroContent();
         contactRowWork.style.display = isPersonal ? 'none' : '';
         contactRowPersonal.style.display = isPersonal ? '' : 'none';
+        document.title = isPersonal ? 'TheGame497' : 'Andrés Muñiz';
+        footerName.textContent = isPersonal ? 'TheGame497' : 'Andrés Muñiz';
         revealNewSection(isPersonal ? personalDiv : workDiv);
         window.scrollTo({ top: 0, behavior: 'instant' in window ? 'instant' : 'auto' });
         setTimeout(function(){ overlay.classList.remove('show'); }, 120);
