@@ -3,7 +3,17 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Andrés Muñiz</title>
+<h1 id="page-title"></h1>
+
+<script>
+  const isPersonal = true; // O el valor que obtengas
+  
+  // Definir el título usando un ternario
+  const title = isPersonal ? "Mi Espacio Personal" : "Espacio General";
+  
+  // Asignarlo al elemento HTML
+  document.getElementById("page-title").textContent = title;
+</script>
 <meta name="description" content="Portfolio de Andrés Muñiz, ingeniero de soporte de sistemas y middleware.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -784,10 +794,7 @@
 
 </div>
 
-${spanish
-  ? '<footer>© <span id="year"></span> Andrés Muñiz — estado: modo determinante.</footer>'
-  : '<footer>© <span id="year"></span> Andrés Muñiz — status: determinant mode.</footer>'
-}
+<footer>© <span id="year"></span> Andrés Muñiz — TheGame497</footer>
 
 <script>
   // work / personal mode switch
